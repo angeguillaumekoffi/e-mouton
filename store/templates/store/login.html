@@ -1,0 +1,58 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% load filtres %}
+
+{% block header %}
+{% endblock header %}
+
+{% block container %}
+<section class="login-block" style="margin-top: 30px;">
+    <div class="container containerlog">
+	<div class="row">
+		<div class="col-md-4 login-sec">
+		    <h2 class="text-center">Connectez-vous maintenant !</h2>
+		    <form class="login-form" method="POST">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="exampleInputEmail1" class="text-uppercase">Nom d'utilisateur</label>
+					{{ form.username |addcss:'form-control' }}
+					
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1" class="text-uppercase">Mot de passe</label>
+					{{ form.password |addcss:'form-control' }}
+				</div>
+				
+				
+					<div class="form-check">
+					<label class="form-check-label">
+					{{ form.remember_me |addcss:'form-check-input' }}
+					<small>Rester conncté</small>
+					</label>
+					<button type="submit" class="btn btn-login float-right">Connexion</button>
+				</div>
+				
+			</form>
+			<div class="copy-text">Developpé par Ange Koffi freelance</div>
+					</div>
+					<div class="col-md-8 banner-sec">
+						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active">
+				<img class="d-block img-fluid" src="/static/images/bglogin.jpg">
+				<div class="carousel-caption d-none d-md-block">
+					<div class="banner-text">
+						<h2>E-Mouton</h2>
+						<p>Reserver vos moutons en ligne vous permet de gagner en temps !</p>
+					</div>	
+			</div>
+			</div>	 
+			
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

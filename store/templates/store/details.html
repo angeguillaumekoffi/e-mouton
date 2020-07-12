@@ -1,0 +1,29 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+		<div class="col-lg-12">
+			<div class="box-element">
+
+				<a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Continuer de rechercher</a>
+
+				<br>
+				<br>
+				<table class="table">
+					<tr>
+						<th><img class="thumbnail" src="{{produit.imageURL}}"></th>
+						<th><h5>Mouton : <strong>{{ produit.name }}</strong></h5>
+							<br>
+							<p><strong>Prix unitaire :</strong> {{produit.price}} Fcfa</p>
+						</th>
+						<th>
+							<button style="float:right; margin:5px;" data-product="{{produit.id}}" data-action="add" class="btn btn-success add-btn update-cart">Ajouter à mon panier</button>
+						</th>
+					</tr>
+				</table>
+
+			</div>
+
+		</div>
+	</div>
+{% endblock content %}

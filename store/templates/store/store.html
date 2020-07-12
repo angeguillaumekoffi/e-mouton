@@ -1,0 +1,83 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block header %}
+<header>
+	<div class="overlay"></div>
+	<img src="/static/images/bglogin.jpg" alt="" width="100%">
+	<div class="container contner h-100">
+	  <div class="d-flex text-center h-100">
+		<div class="my-auto w-100 text-white">
+		  <h1 class="display-3" style="color: white;">E-Mouton</h1>
+		  <h2 style="color: rgb(202, 201, 201);">Votre premier site de vente de moutons en ligne</h2>
+		</div>
+	  </div>
+	</div>
+</header>
+{% endblock header %}
+
+{% block content %}
+<section class="services pt-30 pb-50" id="services">
+	<div class="container">
+	   <div class="row">
+		  <div class="col-xl-6 mx-auto text-center">
+			 <div class="section-title mb-20">
+				<p>Ce que vous pouvez faire ici</p>
+				<h4>Possibilités</h4>
+			 </div>
+		  </div>
+	   </div>
+	   <div class="row">
+		  <div class="col-lg-4 col-md-6">
+			 <!-- Single Service -->
+			 <div class="single-service rounded" style="background-color: #4f868c!important; color: rgb(221, 221, 221);">
+				<i class="fa fa-laptop"></i>
+				<h4 style="color: rgb(255, 94, 1); ">Laptop </h4>
+				<p>Commandez maintenant vos moutons depuis votre bureau </p>
+			 </div>
+		  </div>
+		  <div class="col-lg-4 col-md-6">
+			 <!-- Single Service -->
+			 <div class="single-service rounded" style="background-color: #4f868c!important; color: rgb(221, 221, 221);">
+				<i class="fa fa-mobile"></i>
+				<h4 style="color: rgb(255, 94, 1); ">Smartphone</h4>
+				<p>Commandez aussi vos moutons depuis votre téléphone mobile et partout </p>
+			 </div>
+		  </div>
+		  <div class="col-lg-4 col-md-6">
+			 <!-- Single Service -->
+			 <div class="single-service rounded" style="background-color: #4f868c!important; color: rgb(221, 221, 221);">
+				<i class="fa fa-clock-o"></i>
+				<h4 style="color: rgb(255, 94, 1); ">Gagner du temps</h4>
+				<p>Avec e_mouton ne perdez plus votre temps chercher longtemps dans les abattoirs </p>
+			 </div>
+		  </div>
+	   </div>
+	</div>
+</section>
+	<div class="row">
+		<div class="col-xl-6 mx-auto text-center">
+		<div class="section-title mb-20">
+			<h4>Nos moutons</h4>
+		</div>
+		</div>
+	</div>
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Prendre</button>
+				
+				<a class="btn btn-outline-success" href="{% url 'details' id=product.id %}">Voir</a>
+				<h2 style="display: inline-block;"><strong>{{product.price}}F</strong></h2>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<br><br><br>
+{% endblock content %}
