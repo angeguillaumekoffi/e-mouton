@@ -36,7 +36,7 @@ Flask-Security-Too==3.4.2
 Flask-SQLAlchemy==2.1
 Flask-WTF==0.14.2
 future==0.18.2
-httplib2==0.14.0
+httplib2==0.19.0
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10.1
