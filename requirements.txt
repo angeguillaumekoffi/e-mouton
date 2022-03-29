@@ -55,7 +55,7 @@ monotonic==1.5
 netifaces==0.10.4
 oauthlib==3.1.0
 olefile==0.46
-paramiko==2.6.0
+paramiko==2.10.1
 passlib==1.7.2
 pexpect==4.6.0
 Pillow==7.0.0
